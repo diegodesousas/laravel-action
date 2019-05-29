@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  laravel_action:
+    build: .
+    volumes:
+      - .:/laravel-actions
+    entrypoint: sleep 10000
+    working_dir: /laravel-actions
