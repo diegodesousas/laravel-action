@@ -2,6 +2,7 @@
 
 namespace Action;
 
+// Base action
 abstract class BaseAction
 {
     protected $data;
