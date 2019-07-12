@@ -33,10 +33,10 @@ abstract class BaseAction
     /**
      * @return array
      */
-    abstract protected function rules(): array;
+    abstract public function rules(): array;
 
     /**
      * @return array
      */
-    abstract protected function messages(): array;
+    abstract public function messages(): array;
 }

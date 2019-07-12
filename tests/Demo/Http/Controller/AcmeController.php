@@ -3,21 +3,22 @@
 namespace Test\Demo\Http\Controller;
 
 use Action\BaseRequestAction;
+use Action\ControllerActionHandler;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Test\Demo\Actions\DemoAction;
 
 class AcmeController extends Controller
 {
-    /**
-     * @param BaseRequestAction $action
-     * @return array
-     */
-    public function list(BaseRequestAction $action)
-    {
-        $result = $action->run();
+    use ControllerActionHandler;
 
-        return [
-            'body' => $action->data(),
-            'result' => $result->isOk()
-        ];
+    /**
+     * @param DemoAction $action
+     * @return JsonResponse
+     */
+    public function list(DemoAction $action): JsonResponse
+    {
+        return $this->response($action);
     }
 }

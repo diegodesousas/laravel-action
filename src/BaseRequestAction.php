@@ -4,7 +4,7 @@ namespace Action;
 
 use Illuminate\Http\Request;
 
-class BaseRequestAction extends BaseAction
+abstract class BaseRequestAction extends BaseAction
 {
     /**
      * BaseRequestAction constructor.
@@ -29,29 +29,5 @@ class BaseRequestAction extends BaseAction
     protected function bindJson(Request $request): void
     {
         $this->setData($request->json()->all());
-    }
-
-    /**
-     * @return mixed
-     */
-    public function run(): ResultAction
-    {
-        return new ResultAction(true, []);
-    }
-
-    /**
-     * @return array
-     */
-    protected function rules(): array
-    {
-        return [];
-    }
-
-    /**
-     * @return array
-     */
-    protected function messages(): array
-    {
-        return [];
     }
 }
