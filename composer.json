@@ -14,5 +14,9 @@
       "psr-4": {
         "Test\\": "tests/"
       }
+    },
+    "scripts": {
+      "coverage" : "vendor/bin/phpunit --coverage-html coverage",
+      "test" : "vendor/bin/phpunit"
     }
 }

@@ -26,6 +26,14 @@ abstract class BaseAction
     }
 
     /**
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [];
+    }
+
+    /**
      * @return mixed
      */
     abstract public function run(): ResultAction;
@@ -34,9 +42,4 @@ abstract class BaseAction
      * @return array
      */
     abstract public function rules(): array;
-
-    /**
-     * @return array
-     */
-    abstract public function messages(): array;
 }

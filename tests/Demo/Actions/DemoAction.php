@@ -12,15 +12,7 @@ class DemoAction extends BaseRequestAction
      */
     public function run(): ResultAction
     {
-        $data = [
-            'body' => [
-                'hello' => 'World',
-                'dex' => 'dex'
-            ],
-            'result' => true,
-        ];
-
-        return new ResultAction($data);
+        return new ResultAction($this->data());
     }
 
     /**
@@ -40,13 +32,5 @@ class DemoAction extends BaseRequestAction
                 'boolean'
             ]
         ];
-    }
-
-    /**
-     * @return array
-     */
-    public function messages(): array
-    {
-        return [];
     }
 }

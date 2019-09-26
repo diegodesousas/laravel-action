@@ -12,9 +12,9 @@ trait ControllerActionHandler
      * @param BaseAction $action
      * @return JsonResponse
      */
-    public function response(BaseAction $action): JsonResponse
+    public function handle(BaseAction $action): JsonResponse
     {
-        $result = $this->handle($action);
+        $result = $this->run($action);
 
         if ($result->isOk()) {
             return new JsonResponse($result->data());

@@ -19,6 +19,6 @@ class AcmeController extends Controller
      */
     public function list(DemoAction $action): JsonResponse
     {
-        return $this->response($action);
+        return $this->handle($action);
     }
 }
